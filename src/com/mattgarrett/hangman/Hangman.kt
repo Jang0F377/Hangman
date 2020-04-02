@@ -1,38 +1,62 @@
 package com.mattgarrett.hangman
-
 import java.io.File
+
 
 const val lives: Int = 5
 val selectedWord by lazy { selectWord() }
+var userGuess = readLine()
+var userGuess2 = userGuess.toString()[0]
+    get() = field.toLowerCase()
 
-// File to select a word from
+
+// Function to select a word from file.
 fun selectWord() = File("data/Words.txt")
     .readLines()
     .shuffled()
     .first()
 
-private fun replaceLetters(phrase: String) =
-    phrase.replace(Regex(pattern = "[a-zA-Z]")) {
-        when (it.value) {
-            it.value -> " __ "
-            else ->  "<>"
-        }
+
+
+
+fun guessLetters(letter: Char) {
+    var selection = selectedWord.toCharArray()
+    if (letter in ) {
+        print(letter)
     }
-
-
-//fun howManyLetters(letter: Int): String {
-//    var underscores =
-//}
-//
-//fun showMeLetters(selectedWord: String): String {
-//    for (letter in selectedWord) {
-//
-//    }
-//
-//}
+}
 
 
 fun main() {
-    println(replaceLetters(selectedWord))
-//    println(selectedWord)
+//    println(">> Please enter a letter: ")
+    guessLetters(userGuess2)
+
 }
+
+
+
+
+
+//// variable to hold the picked word in underscores
+//val guessThisWord = replaceLetters(selectedWord)
+//
+//
+//
+//var printWhatToGuess = readLine()
+//
+//fun main() {
+//    println(guessThisWord)
+//    print("> Guess your letter: ")
+//}
+//// Function to replace chosen word with underscores so player can see amount of letters in word
+//private fun replaceLetters(phrase: String) =
+//    phrase.replace(Regex(pattern = "[a-zA-Z]")) {
+//        when (it.value) {
+//            it.value -> " __ "
+//            else ->  "<?>"
+//        }
+//    }
+
+//private fun reverseLetters(phrase: String) =
+//    phrase.replace(Regex(pattern = "[_]")) {
+//        when ()
+//    }
