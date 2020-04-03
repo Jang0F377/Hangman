@@ -6,11 +6,11 @@ fun chooseDifficulty() {
 
 //    Loop until correct input is given
     do {
-        print("\n__SELECT_DIFFICULTY__"+
+        print("\n__SELECT__DIFFICULTY__"+
         c.ANSI_GREEN+"\n1. EASY\n\t-10 LIVES"+c.ANSI_RESET+
         c.ANSI_YELLOW+"\n2. MEDIUM\n\t-8 LIVES"+c.ANSI_RESET+
         c.ANSI_RED+"\n3. HARD\n\t-6 LIVES"+c.ANSI_RESET)
-        print(c.ANSI_CYAN+"\nPlease Choose a Number\n> "+c.ANSI_RESET)
+        print(c.ANSI_CYAN+"\n__Please_Choose_a _Number__\n> "+c.ANSI_RESET)
 
         userChoice = readLine()!!.trim()
         if (userChoice == "1") {
