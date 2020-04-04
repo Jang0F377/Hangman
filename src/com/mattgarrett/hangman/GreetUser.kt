@@ -1,4 +1,7 @@
 package com.mattgarrett.hangman
+
+import kotlin.system.exitProcess
+
 private val c = Colors()
 
 class UserGreetings() {
@@ -31,7 +34,7 @@ class UserGreetings() {
                     "  |         |\n" +
                     "  |         |\n" +
                     "  Q         |\n" +
-                    "  I         |\n" +
+                    "  |         |\n" +
                     "  |         |\n" +
                     " / \\        |\n" +
                     "            |\n" +
@@ -63,7 +66,19 @@ class UserGreetings() {
     }
 
     fun loserMessage() {
-        print(c.ANSI_RED+"SORRY")
+        print(c.ANSI_RED+"---SORRY--YOU--LOST---\n"+
+        "The word you were looking for was: [$wordToGuess]\n"+
+        c.ANSI_BLUE+"Would you like to play again? (y/n): "+
+        c.ANSI_RESET)
+
+//      Take user input and restart game if necessary or exit
+        if (readLine() == "y") {
+            println("Best of luck!!")
+            initializeGame()
+        } else {
+            println("Thank you for playing!")
+            exitProcess(0)
+        }
 
 
     }

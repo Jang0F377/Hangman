@@ -14,13 +14,13 @@ fun chooseDifficulty() {
 
         userChoice = readLine()!!.trim()
         if (userChoice == "1") {
-            playerLives == 10
+            playerLives = 10
             break
         } else if (userChoice == "2") {
-            playerLives == 8
+            playerLives = 8
             break
         } else if (userChoice == "3") {
-            playerLives == 6
+            playerLives = 6
             break
         }
     } while (true)

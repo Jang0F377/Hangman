@@ -12,17 +12,49 @@ var playing = true
 var winner = false
 
 fun main() {
+//    Greet User
     UG.greetUser()
+//    method to be called anywhere
+    initializeGame()
+//    game has finished
+    println("Thank you for playing!")
+
+}
+
+fun initializeGame() {
+    playing = true
+    wordToGuess = ""
+    playerLives = 0
+    guessedList.clear()
     chooseDifficulty()
+    playGame()
+
 }
 
 
 
+private fun playGame() {
+    while (playing) {
+        printWord()
+        userInfo()
+
+        takeAGuess()
+        checkGameOver()
+    }
+
+    if (winner) {
+        printWord()
+        UG.winnerMessage()
+    } else {
+        UG.loserMessage()
+    }
+
+}
 
 
-
-
-fun takeAGuess() {
+// Function to capture the users input and make sure it is valid
+// And process the input through the word and guessed list
+private fun takeAGuess() {
     var letter: Char
 //  Loop until we have valid input
     do {
@@ -38,11 +70,11 @@ fun takeAGuess() {
 
     if (guessedList.contains(letter)) {
         print("[-]YOU HAVE ALREADY GUESSED THAT LETTER[-]")
-        TODO()
+        playGame()
     } else {
         guessedList.add(letter)
 
-        if (!wordToGuess!!.contains(letter)) {
+        if (!wordToGuess.contains(letter)) {
             playerLives--
         }
     }
@@ -58,7 +90,7 @@ fun takeAGuess() {
 
 // Method to either print an underscore for each letter in the word, that the user hasnt guessed
 // Or fill in the letters that have been guessed
-fun printWord() {
+private fun printWord() {
     wordToGuess = pickAWord()
     wordToGuess.forEach {
         c -> print(refactorWord(c)+" ")
@@ -66,7 +98,7 @@ fun printWord() {
 }
 
 //Helper method to determine if the word contains guessed letters
-fun refactorWord(c: Char): Char {
+private fun refactorWord(c: Char): Char {
     return when (guessedList.contains(c)) {
         true -> c
         false -> '?'
@@ -75,7 +107,7 @@ fun refactorWord(c: Char): Char {
 
 
 // Update function to check if the characters guessed match the word
-fun checkGameOver(){
+private fun checkGameOver(){
     var complete = true
     wordToGuess.forEach {
         c -> if (!guessedList.contains(c)) {
