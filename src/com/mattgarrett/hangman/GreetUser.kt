@@ -46,18 +46,18 @@ class UserGreetings() {
     fun winnerMessage() {
         print(
             c.ANSI_PURPLE + "Congratulations!!\n" +
-                    "YY   YY   OOOO    U    U\n" +
-                    " YY YY   O    O   U    U\n" +
-                    "  YYY    O    O   U    U\n" +
-                    "  YYY    O    O   U    U\n" +
-                    "  YYY     OOOO     UUUU\n\n" +
+                    "YY   YY    OOOO    U    U\n" +
+                    " YY YY    O    O   U    U\n" +
+                    "  YYY     O    O   U    U\n" +
+                    "  YYY     O    O   U    U\n" +
+                    "  YYY      OOOO     UUUU\n\n" +
                     c.ANSI_YELLOW +
-                    "W           W    OOOO    NNN    NNN\n" +
-                    "W     W     W   O    O   NNNN   NNN\n" +
-                    "WW   WWW   WW   O    O   NNN N  NNN\n" +
-                    "WW  WWWWW  WW   O    O   NNN  NNNNN\n" +
-                    "WWW WWWWW WWW   O    O   NNN   NNNN\n" +
-                    "WWWWWWWWWWWWW    OOOO    NNN    NNN\n" +
+                    "W           W     OOOO    NNN    NNN\n" +
+                    "W     W     W    O    O   NNNN   NNN\n" +
+                    "WW   WWW   WW    O    O   NNN N  NNN\n" +
+                    "WW  WWWWW  WW    O    O   NNN  NNNNN\n" +
+                    "WWW WWWWW WWW    O    O   NNN   NNNN\n" +
+                    "WWWWWWWWWWWWW     OOOO    NNN    NNN\n" +
                     c.ANSI_RESET
         )
     }
